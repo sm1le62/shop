@@ -1,0 +1,19 @@
+{% extends 'generic.html' %}
+{% block title %}Product -- {{tovar.title}}{% endblock %}
+{% block header %}{{tovar.title}}{% endblock %}
+{% block contents%} 
+<table border="1">
+    <tr><td>Name</td><td>{{tovar.title}}</td></tr>
+    <tr><td>Article</td><td>{{tovar.article}}</td></tr>
+    <tr><td>Quantity</td><td>{{tovar.quantity}}</td></tr>
+    <tr><td>Deskription</td><td>{{tovar.description}}</td></tr>
+    <tr><td>Group</td><td>{{tovar.group.title}}</td></tr>
+    <tr><td>Tags</td><td>{{ tags }}</td></tr>
+</table>
+
+<p>Vremenno</p>
+<ul>
+    {% for tag in tovar.tags.all %}
+    <li>{{ tag.title }}</li>
+    {% endfor %}
+{% endblock %}

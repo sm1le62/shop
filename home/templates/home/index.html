@@ -1,0 +1,29 @@
+<html>
+    <head><title>Our store</title></head>
+    <body>
+        <!-- Main menu -->
+        <table>
+            <tr>
+                <td>Start</td>
+                <td>Goods</td>
+            </tr>
+        </table>
+        <!-- End of Main menu -->
+        
+        <!-- Main title -->
+        <h1>Our cool store</h1>
+        <!-- End Main menu -->
+        
+        <div id="contents">
+            <!-- Contents -->
+            
+            <p>Moscow time: {{ current_time }}</p>
+            
+            <p>Welcome!!!</p>
+            <a href="{% url 'tovar:index'%}">Goods</a>
+            <!-- End of contents -->
+        </div>
+        
+    </body>
+
+</html>

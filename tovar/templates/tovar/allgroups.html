@@ -1,0 +1,20 @@
+{% extends 'generic.html' %}
+{% block title %}Groups list{% endblock %}
+{% block header %}Groups list{% endblock %}
+{% block contents%} 
+<table border="1">
+<tr>
+    <th>code</th>
+    <th>title</th>
+    <th>skoro</th>
+</tr>
+
+{% for g in all_groups %}
+<tr>
+    <td>{{g.code}}</td> <!-- title -->
+    <td>{{g.title}}</td> <!-- code -->
+    <td>{{g.skoro}}</td> <!-- skoro -->
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

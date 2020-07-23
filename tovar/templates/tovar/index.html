@@ -1,0 +1,33 @@
+{% extends 'generic.html' %}
+{% block title %}Goods list{% endblock %}
+{% block header %}Goods list{% endblock %}
+{% block contents%} 
+<table border="1">
+<tr>
+    <th>Article</th>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+</tr>
+{% for t in all_tovars %}
+<tr>
+    <td>{{t.article}}</td> <!-- Article -->
+    <td>{{t.title}}</td> <!-- Name -->
+    <td>{{t.quantity}}</td> <!-- Quantity -->
+    <td>
+        {% for tag in t.tags.all|slice:":5" %}
+            {{ tag.title }}
+        {% endfor %}
+    </td> <!-- Homework tags  -->
+    <td><a href="{% url 'tovar:tags'  t.pk%}">Tags</a></td>
+    <td><a href="{% url 'tovar:show' t.pk%}">View</a></td>
+    <td><a href="{% url 'tovar:edit' t.pk%}">Edit</a></td>
+    <td><a href="{% url 'tovar:delete' t.pk%}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{% url 'tovar:create' %}">New good</a>
+
+{% endblock %}

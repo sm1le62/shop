@@ -1,0 +1,29 @@
+{% extends 'generic.html' %}
+{% block title %}Product -- {{tovar.title}}{% endblock %}
+{% block header %}{{tovar.title}}{% endblock %}
+
+{% block contents %}
+
+
+<p> Method: {{ request.method }} </p>
+
+<p>Raw data: {{ raw_data }}</p>
+
+
+<form method="POST" action="">{% csrf_token %}
+    
+    <table border="1">
+        <tr>
+            <td><lable for="title">Name</label></td>
+            <td><input id="title" type="text" name="title" /></td>
+        </tr>
+        <tr>
+            <td><label for="quantity">In stock </label></td>
+            <td><input id="quantity" type="text" name="quantity" /></td>
+        </tr>
+        
+    </table>
+    <input type="submit" />
+    <input type="reset" />
+</form>
+{% endblock %}
